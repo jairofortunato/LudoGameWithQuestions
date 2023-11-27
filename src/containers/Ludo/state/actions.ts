@@ -25,6 +25,10 @@ export enum ActionTypes {
 
   SET_PLAYERS = 'ludo/SET_PLAYERS',
   ENABLE_BASE = 'ludo/ENABLE_BASE',
+
+  PLAYER_DECIDED_TO_PLAY = 'ludo/PLAYER_DECIDED_TO_PLAY',
+  PLAYER_DECIDED_TO_PASS = 'ludo/PLAYER_DECIDED_TO_PASS',
+
 }
 
 export const getInitialGameData = (): IReduxAction<ActionTypes.GET_INITIAL_GAME_DATA, void> => ({
@@ -114,6 +118,15 @@ export const enableBase = (baseID: BaseID): IReduxAction<ActionTypes.ENABLE_BASE
   type: ActionTypes.ENABLE_BASE,
 });
 
+export const playerDecidedToPlay = (): IReduxAction<ActionTypes.PLAYER_DECIDED_TO_PLAY> => ({
+  type: ActionTypes.PLAYER_DECIDED_TO_PLAY,
+});
+
+export const playerDecidedToPass = (): IReduxAction<ActionTypes.PLAYER_DECIDED_TO_PASS> => ({
+  type: ActionTypes.PLAYER_DECIDED_TO_PASS,
+});
+
+
 export type Actions =
   | ReturnType<typeof getInitialGameDataSuccess>
   | ReturnType<typeof spawnCoin>
@@ -130,4 +143,6 @@ export type Actions =
   | ReturnType<typeof setPlayers>
   | ReturnType<typeof enableBase>
   | ReturnType<typeof markWinner>
+  | ReturnType<typeof playerDecidedToPlay>
+  | ReturnType<typeof playerDecidedToPass>
   ;

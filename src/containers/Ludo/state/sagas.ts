@@ -66,6 +66,8 @@ function * getInitialGameDataSaga() {
     links: data.links,
     relationships: data.relationships,
     walkways: mapByProperty(data.walkways, 'ID'),
+    playerOrder: [BaseID.BASE_1, BaseID.BASE_2, BaseID.BASE_3, BaseID.BASE_4], // Set the initial player order
+
   };
   yield put(getInitialGameDataSuccess(gameData));
 }

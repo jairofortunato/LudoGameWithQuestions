@@ -11,6 +11,7 @@ const initialState: IState = {
   links: {},
   relationships: [],
   walkways: {},
+  playerOrder: [BaseID.BASE_1, BaseID.BASE_2, BaseID.BASE_4, BaseID.BASE_3], // Example order
 };
 
 export const reducer = (state: IState = initialState, action: Actions): IState => {
@@ -34,6 +35,26 @@ export const reducer = (state: IState = initialState, action: Actions): IState =
         walkways,
       };
     }
+    case ActionTypes.PLAYER_DECIDED_TO_PLAY: {
+      // TODO: Implement any logic that should occur when a player decides to play
+      // For now, we will just return the current state
+      return state;
+    }
+
+    case ActionTypes.PLAYER_DECIDED_TO_PASS: {
+      // Find the index of the current player
+      const currentIndex = state.playerOrder.indexOf(state.currentTurn);
+      // Calculate the index of the next player
+      const nextIndex = (currentIndex + 1) % state.playerOrder.length;
+      // Get the BaseID of the next player
+      const nextTurn = state.playerOrder[nextIndex];
+    
+      return {
+        ...state,
+        currentTurn: nextTurn,
+      };
+    }
+
     case ActionTypes.SPAWN_COIN_SUCCESS: {
       const { cellID, coinID, position } = action.data!;
       return {

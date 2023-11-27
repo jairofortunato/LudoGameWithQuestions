@@ -1,6 +1,6 @@
 import { BaseColors } from 'state/interfaces';
 
-export const CELL_DIMENSION = 40;                             // Pixels
+export const CELL_DIMENSION = 52;                             // Pixels
 export const CELL_SIZE = 1;                                   // Pixels
 export const BOARD_SIZE = 15;                                 // Cells
 export const BOARD_DIMENSION = CELL_DIMENSION * BOARD_SIZE;   // Pixels

@@ -82,7 +82,7 @@
   },
   "scripts": {
     "start": "http-server build -p $PORT",
-    "dev": "node scripts/start.js",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },

@@ -71,6 +71,7 @@ export interface IState {
   links: IServerGameData['links'];
   coins: { [coinID: string]: ICoin };
   currentTurn: BaseID;
+  playerOrder: BaseID[]; // Array to track the order of players
 }
 
 export interface IServerGameData {

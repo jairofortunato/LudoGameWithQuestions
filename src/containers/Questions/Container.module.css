@@ -1,0 +1,55 @@
+.questionsContainer {
+    background-color: #dbcdcd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 500px;
+  }
+  
+  .question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .optionsContainer {
+    margin-bottom: 20px;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .option input {
+    margin-right: 10px;
+  }
+  
+  .buttonContainer {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .questionsContainer {
+      margin: 10px;
+      width: calc(100% - 20px);
+    }
+  }
+  
